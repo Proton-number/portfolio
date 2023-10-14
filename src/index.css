@@ -14,4 +14,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  background-image: url('/src/images/cropped-1600-900-572570.jpg');
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
 
