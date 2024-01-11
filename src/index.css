@@ -14,12 +14,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body{
-  background-image: url('/src/images/cropped-1600-900-572570.jpg');
-  height: 100vh;
-  margin: auto;
-  display: flex;
-  justify-content:center;
-  align-items: center;
+#stack{
+  color: aquamarine;
 }
 
+
+.background {
+  background: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}

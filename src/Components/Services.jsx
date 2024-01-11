@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Name() {
+function Services() {
   return (
     <div>
-      my name nikka....
+      services
     </div>
   )
 }
 
-export default Name
+export default Services
