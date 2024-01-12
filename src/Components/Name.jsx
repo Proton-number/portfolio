@@ -32,13 +32,13 @@ function Name() {
       }}
     >
       <ThemeProvider theme={font}>
-        <Typography variant="h1" sx={{ fontSize: { sm: "70px", lg: "120px" } }}>
+        <Typography variant="h1" sx={{ fontSize: {xs:"50px", sm: "70px", lg: "120px" } }}>
           HEY, I'M FAVOUR
         </Typography>
-        <Typography variant="h1" sx={{ fontSize: { sm: "70px", lg: "120px" } }}>
+        <Typography variant="h1" sx={{ fontSize: {xs:"50px", sm: "70px", lg: "120px" } }}>
           HEY, I'M FAVOUR
         </Typography>
-        <Typography variant="h1" sx={{ fontSize: { sm: "70px", lg: "120px" } }}>
+        <Typography variant="h1" sx={{ fontSize: {xs:"50px", sm: "70px", lg: "120px" } }}>
           HEY, I'M FAVOUR
         </Typography>
       </ThemeProvider>

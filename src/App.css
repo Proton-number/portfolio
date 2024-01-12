@@ -7,4 +7,23 @@
 
 a{
 	text-decoration: none;
+  color: white;
+}
+
+#service-desktop{
+  display: none;
+}
+
+#service-mobile{
+  display: block;
+}
+
+@media screen and (min-width:600px) {
+  #service-desktop{
+    display: block;
+  }
+  
+  #service-mobile{
+    display: none;
+  }
 }

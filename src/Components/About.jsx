@@ -16,18 +16,33 @@ function About() {
         display: "flex",
         justifyContent: "center",
         height: "100vh",
+        width: "100%",
         alignItems: "center",
+        backgroundColor: "white",
+        color: "black",
       }}
     >
-      <Typography variant="h1">About me</Typography>
+      <Typography
+        variant="h1"
+        sx={{ fontSize: { xs: "30px", sm: "70px", lg: "100px" } }}
+      >
+        About me
+      </Typography>
       <Stack
+        spacing={{ xs: 2, sm: 6, lg: 14 }}
         direction={{ sm: "row" }}
-        sx={{ alignItems: "center", padding: { sm: "30px", lg: "70px" } }}
+        sx={{
+          alignItems: "center",
+          padding: { xs: "30px", sm: "20px", lg: "70px" },
+        }}
       >
         <Box
           component="img"
           src={me}
-          sx={{ width: { sm: "300px", lg: "400px" }, height: "auto" }}
+          sx={{
+            width: { xs: "200px", sm: "300px", lg: "400px" },
+            height: "auto",
+          }}
         />
         <Stack sx={{ width: "50%", margin: "auto" }}>
           <Typography>
@@ -40,9 +55,6 @@ function About() {
           <Typography>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
             natus? Odio sequi earum animi illo eligendi architecto aliquam nemo.
-            Vero dolor error atque autem dignissimos quisquam eum quas quis
-            sapiente quasi quibusdam natus esse, ipsa impedit, explicabo unde.
-            Neque, dolorum.
           </Typography>
         </Stack>
       </Stack>

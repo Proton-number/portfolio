@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 function Services() {
   return (
     <Stack
+    id='service-desktop'
       component={motion.div}
       initial={{ opacity: 0, y: 55 }}
       whileInView={{

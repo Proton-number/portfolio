@@ -11,6 +11,7 @@ import About from "./Components/About";
 import Services from "./Components/Services";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
+import Servicesmobile from "./Components/Servicesmobile";
 
 function App() {
   return (
@@ -37,18 +38,17 @@ function App() {
           </ParallaxLayer>
 
           {/* Page 3 */}
-          <ParallaxLayer
-            offset={2}
-            speed={1.6}
-            style={{ backgroundColor: "white", color: "black" }}
-          >
+          <ParallaxLayer offset={2} speed={1.6}>
             <About />
           </ParallaxLayer>
 
           {/* Page 4 */}
           <ParallaxLayer offset={3} speed={1.2}>
             <Services />
+            <Servicesmobile />
           </ParallaxLayer>
+
+        
 
           {/* Page 5 */}
           <ParallaxLayer

@@ -22,7 +22,7 @@ function Talk() {
         display: "flex",
         justifyContent: "center",
         height: "100vh",
-        width: { sm: "80%", lg: "50%" },
+        width: { xs: "80%", lg: "50%" },
         margin: "auto",
         alignItems: "center",
       }}
