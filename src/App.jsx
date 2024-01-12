@@ -46,7 +46,7 @@ function App() {
           </ParallaxLayer>
 
           {/* Page 4 */}
-          <ParallaxLayer offset={3} speed={1.8}>
+          <ParallaxLayer offset={3} speed={1.2}>
             <Services />
           </ParallaxLayer>
 
@@ -60,11 +60,7 @@ function App() {
           </ParallaxLayer>
 
           {/* Page 6 */}
-          <ParallaxLayer
-            offset={5}
-            speed={3.5}
-            style={{ backgroundColor: "black", color: "white" }}
-          >
+          <ParallaxLayer offset={5} speed={3.5}>
             <Contact />
           </ParallaxLayer>
         </Parallax>

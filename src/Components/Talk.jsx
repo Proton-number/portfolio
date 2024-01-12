@@ -16,13 +16,13 @@ function Talk() {
       whileInView={{
         opacity: 1,
         y: 0,
-        transition: { delay: 0.5, duration: 0.9 },
+        transition: { delay: 0.2, duration: 1.4 },
       }}
       sx={{
         display: "flex",
         justifyContent: "center",
         height: "100vh",
-        width: {sm:'80%',lg:"50%"},
+        width: { sm: "80%", lg: "50%" },
         margin: "auto",
         alignItems: "center",
       }}

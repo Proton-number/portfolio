@@ -16,7 +16,7 @@ function Services() {
       whileInView={{
         opacity: 1,
         y: 0,
-        transition: { delay: 0.5, duration: 0.9 },
+        transition: { delay: 0.2, duration: 1.4},
       }}
       sx={{
         width: { sm: "92%", lg: "84%" },
