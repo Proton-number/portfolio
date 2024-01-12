@@ -1,11 +1,22 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import { motion } from "framer-motion";
+import React from "react";
 
 function Contact() {
   return (
-    <div>
+    <Box
+     
+      
+      sx={{
+        width: { sm: "92%", lg: "84%" },
+        margin: "auto",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       Contact me
-    </div>
-  )
+    </Box>
+  );
 }
 
-export default Contact
+export default Contact;
