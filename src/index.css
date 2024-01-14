@@ -19,7 +19,7 @@
 
 
 .background {
-  background:linear-gradient(239deg, #e7f1fd 0%, #687791 100%);
+  /* background:linear-gradient(239deg, #e7f1fd 0%, #687791 100%); */
   position: absolute;
   top: 0;
   bottom: 0;

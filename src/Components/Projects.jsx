@@ -1,11 +1,18 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import React from "react";
+import { ParallaxLayer } from "@react-spring/parallax";
 
 function Projects() {
   return (
-    <div>
-      projects..
-    </div>
-  )
+    <ParallaxLayer
+      offset={4}
+      speed={0.2}
+      factor={3}
+      style={{ backgroundColor: "hotpink", color: "white" }}
+    >
+      <Box>projects..</Box>
+    </ParallaxLayer>
+  );
 }
 
-export default Projects
+export default Projects;

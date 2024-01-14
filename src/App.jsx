@@ -3,8 +3,7 @@ import "./App.css";
 import { Box } from "@mui/material";
 import LoadingComponent from "./Components/LoadingComponent";
 import { motion } from "framer-motion";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Typography } from "@mui/material";
+import { Parallax } from "@react-spring/parallax";
 import Name from "./Components/Name";
 import Talk from "./Components/Talk";
 import About from "./Components/About";
@@ -22,47 +21,19 @@ function App() {
       // initial={{ opacity: 0 }}
       // animate={{ opacity: 1, y: 0, transition: { delay: 4 } }}
       >
-        <Parallax pages={6}>
-          {/* Page 1 */}
-          <ParallaxLayer
-            offset={0}
-            speed={2}
-            style={{ backgroundColor: "white", color: "black" }}
-          >
-            <Name />
-          </ParallaxLayer>
+        <Parallax pages={6} style={{ backgroundColor: "black" }}>
+          <Name />
 
-          {/* Page 2 */}
-          <ParallaxLayer offset={1} speed={1}>
-            <Talk />
-          </ParallaxLayer>
+          <Talk />
 
-          {/* Page 3 */}
-          <ParallaxLayer offset={2} speed={1.6}>
-            <About />
-          </ParallaxLayer>
+          <About />
 
-          {/* Page 4 */}
-          <ParallaxLayer offset={3} speed={1.2}>
-            <Services />
-            <Servicesmobile />
-          </ParallaxLayer>
+          <Services />
+          <Servicesmobile />
 
-        
+          <Projects />
 
-          {/* Page 5 */}
-          <ParallaxLayer
-            offset={4}
-            speed={2.1}
-            style={{ backgroundColor: "white", color: "black" }}
-          >
-            <Projects />
-          </ParallaxLayer>
-
-          {/* Page 6 */}
-          <ParallaxLayer offset={5} speed={3.5}>
-            <Contact />
-          </ParallaxLayer>
+          <Contact />
         </Parallax>
       </Box>
     </Box>
