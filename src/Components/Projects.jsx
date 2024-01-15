@@ -8,7 +8,7 @@ function Projects() {
       offset={4}
       speed={0.2}
       factor={3}
-      style={{ backgroundColor: "hotpink", color: "white" }}
+      style={{ backgroundColor: "white", color: "black" }}
     >
       <Box>projects..</Box>
     </ParallaxLayer>

@@ -21,7 +21,7 @@ function App() {
       // initial={{ opacity: 0 }}
       // animate={{ opacity: 1, y: 0, transition: { delay: 4 } }}
       >
-        <Parallax pages={6} style={{ backgroundColor: "black" }}>
+        <Parallax pages={6} style={{ backgroundColor: "#919191", color:"#040404" }}>
           <Name />
 
           <Talk />

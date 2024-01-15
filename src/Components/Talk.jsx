@@ -15,7 +15,7 @@ function Talk() {
       offset={1}
       speed={0.6}
       factor={1.5}
-      style={{ backgroundColor: "green" }}
+      style={{ backgroundColor: "white", color: "black" }}
     >
       <Box
         component={motion.div}
@@ -35,8 +35,7 @@ function Talk() {
         }}
       >
         <Typography variant="h3">
-          I am a frontend developer who likes to build cool stuff and connect
-          people through it.{" "}
+          Building cool stuff and connect people through it.{" "}
         </Typography>
       </Box>
     </ParallaxLayer>

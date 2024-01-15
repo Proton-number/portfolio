@@ -16,7 +16,7 @@ function Services() {
         offset={3}
         speed={1.1}
         factor={1.4}
-        style={{ backgroundColor: "blue", color: "white" }}
+        style={{ backgroundColor: "white" }}
       >
         <Stack
           // component={motion.div}

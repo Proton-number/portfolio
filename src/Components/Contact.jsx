@@ -43,17 +43,13 @@ function Contact() {
     // },
     palette: {
       primary: {
-        main: "#ff5722", // Change this to your desired primary color
+        main: "#B1BDC5", // Change this to your desired primary color
       },
     },
   });
 
   return (
-    <ParallaxLayer
-      offset={5}
-      speed={0.8}
-      style={{ backgroundColor: "lightgreen" }}
-    >
+    <ParallaxLayer offset={5} speed={0.8} style={{ backgroundColor: "white" }}>
       <Box
         component={motion.div}
         initial={{ opacity: 0, y: 30 }}
@@ -93,7 +89,7 @@ function Contact() {
           </Typography>
 
           <Stack
-            spacing={{ lg: 40 }}
+            spacing={{ sm: 10, lg: 40 }}
             direction={{ lg: "row" }}
             sx={{ alignItems: "center" }}
           >
@@ -155,6 +151,10 @@ function Contact() {
                   sx={{
                     textTransform: "none",
                     width: { xs: "30%", sm: "20%", lg: "34%" },
+                    backgroundColor: "#303030",
+                    "&:hover": {
+                      backgroundColor: "#040404",
+                    },
                   }}
                 >
                   Send
@@ -173,18 +173,8 @@ function Contact() {
                 >
                   <EmailIcon />
                   <a href="mailto:favouradebimpe63@gmail.com">
-                    <Typography>favouradebimpe@gmail.com</Typography>
-                  </a>
-                </Stack>
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  sx={{ alignItems: "center" }}
-                >
-                  <WhatsAppIcon />
-                  <a href="https://github.com/Proton-number">
-                    <Typography sx={{ color: "white" }}>
-                      Text me on Whatsapp
+                    <Typography sx={{ color: "black" }}>
+                      favouradebimpe@gmail.com
                     </Typography>
                   </a>
                 </Stack>
@@ -198,7 +188,7 @@ function Contact() {
                 >
                   <GitHubIcon />{" "}
                   <a href="https://github.com/Proton-number">
-                    <Typography>Github</Typography>
+                    <Typography sx={{ color: "black" }}>Github</Typography>
                   </a>
                 </Stack>
                 <Stack
@@ -208,12 +198,12 @@ function Contact() {
                 >
                   <Box
                     component="img"
-                    sx={{ width: { lg: "25px" } }}
+                    sx={{ width: { sm: "24px", lg: "25px" } }}
                     src={NetlifyIcon}
                     alt="Netlify Icon"
                   />
                   <a href="https://app.netlify.com/teams/favouradebimpe63/overview">
-                    <Typography>Netlify</Typography>
+                    <Typography sx={{ color: "black" }}>Netlify</Typography>
                   </a>
                 </Stack>
               </Stack>

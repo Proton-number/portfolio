@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Box,
   Typography,
@@ -6,17 +6,23 @@ import {
   createTheme,
   ThemeProvider,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 import me from "/src/images/IMG_2149.jpg";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 function About() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
   return (
     <ParallaxLayer
       offset={2}
       speed={1}
-      factor={1.8}
-      style={{ backgroundColor: "white", color: "black" }}
+      factor={1}
+      style={{ backgroundColor: "white", }}
     >
       <Stack
         // component={motion.div}
@@ -56,22 +62,35 @@ function About() {
               height: "auto",
             }}
           />
-          <Stack sx={{ width: "50%", margin: "auto" }}>
-            <Typography>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-              ihil commodi a accusantium lectus repellendus laudantium placeat
-              sunt tempore deserunt? Possimus vero aliquam iure quos! Desectetur
-              suscipit. Hic excepturi, dolorem ad reprehenderit doloremque
-              facere animi possimus officia!
+          <Stack
+            spacing={{ sm: 2, lg: 3 }}
+            sx={{ width: "50%", margin: "auto" }}
+          >
+            <Typography variant="h2">
+              <b> Who is Favour?</b>
             </Typography>
             <Typography>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
-              natus? Odio sequi earum animi illo eligendi architecto aliquam
-              nemo.
+              I am a front end developer based in Lagos, Nigeria. When i am not
+              a developer, i'm a mechanical engineering student in the Federal
+              University of Technology, Akure.
+            </Typography>
+            <Typography>
+              I love bringing ideas to life through code and to give the best
+              user experience with them. Experiences like animations but i'm
+              also looking to branch into 3d animation with tools like React
+              three fiber.
+            </Typography>
+            <Typography>
+              When i'm not coding,i watch anime or football. I am a huge
+              Barcelona fan! and of course, Messi is the GOAT. I listen to music
+              too. Artistes like Eminem, Doja, Brent, Drake and Billie really
+              get to me.
             </Typography>
           </Stack>
         </Stack>
       </Stack>
+
+    
     </ParallaxLayer>
   );
 }
