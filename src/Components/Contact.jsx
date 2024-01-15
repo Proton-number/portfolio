@@ -49,7 +49,7 @@ function Contact() {
   });
 
   return (
-    <ParallaxLayer offset={5} speed={0.8} style={{ backgroundColor: "white" }}>
+    <ParallaxLayer offset={5} speed={1.2} style={{ backgroundColor: "white" }}>
       <Box
         component={motion.div}
         initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ function Contact() {
                 <Stack
                   direction="row"
                   spacing={1}
-                  sx={{ alignItems: "center", alignItems: "center" }}
+                  sx={{ alignItems: "center" }}
                 >
                   <EmailIcon />
                   <a href="mailto:favouradebimpe63@gmail.com">

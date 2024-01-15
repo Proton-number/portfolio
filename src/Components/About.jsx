@@ -25,13 +25,13 @@ function About() {
       style={{ backgroundColor: "white", }}
     >
       <Stack
-        // component={motion.div}
-        // initial={{ opacity: 0, y: 55 }}
-        // whileInView={{
-        //   opacity: 1,
-        //   y: 0,
-        //   transition: { delay: 0.8, duration: 1.1 },
-        // }}
+        component={motion.div}
+        initial={{ opacity: 0, y: 55 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.8, duration: 1.1 },
+        }}
         sx={{
           display: "flex",
           justifyContent: "center",

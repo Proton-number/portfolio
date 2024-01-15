@@ -23,13 +23,13 @@ function Name() {
       style={{ backgroundColor: "white", color: "black" }}
     >
       <Stack
-        // component={motion.div}
-        // initial={{ opacity: 0, y: 55 }}
-        // whileInView={{
-        //   opacity: 1,
-        //   y: 0,
-        //   transition: { delay: 0.3, duration: 0.8 },
-        // }}
+        component={motion.div}
+        initial={{ opacity: 0, y: 55 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.3, duration: 0.8 },
+        }}
         sx={{
           display: "flex",
           justifyContent: "center",
