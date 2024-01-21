@@ -7,16 +7,20 @@ import {
   createTheme,
   ThemeProvider,
 } from "@mui/material";
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 import EmailIcon from "@mui/icons-material/Email";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import NetlifyIcon from "/src/images/netlify.svg";
 import { ParallaxLayer } from "@react-spring/parallax";
+import { useBattery } from "@uidotdev/usehooks";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  // TO GET BATTERY OF USER
+  const { level } = useBattery();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -47,6 +51,33 @@ function Contact() {
       },
     },
   });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_thl5klz",
+        "template_47o1gil",
+        form.current,
+        "t109mLgRKENh6e3Ch"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+  const form = useRef();
 
   return (
     <ParallaxLayer offset={5} speed={1.2} style={{ backgroundColor: "white" }}>
@@ -111,55 +142,69 @@ function Contact() {
                   Let's make it a reality.
                 </Typography>
               </Stack>
-              <Stack
-                spacing={3}
-                sx={{
-                  width: { sm: "88%", lg: "100%" },
-                  justifyContent: "center",
-                  padding: { xs: "20px", sm: 0 },
-                }}
-              >
-                <Stack direction="row" spacing={10}>
-                  <ThemeProvider theme={theme}>
-                    <TextField
-                      variant="standard"
-                      type="name"
-                      label="Your Name"
-                      color="primary"
-                    />
-                  </ThemeProvider>
-                  <ThemeProvider theme={theme}>
-                    <TextField
-                      variant="standard"
-                      type="email"
-                      label="Your Email"
-                      color="primary"
-                    />
-                  </ThemeProvider>
-                </Stack>
-                <ThemeProvider theme={theme}>
-                  <TextField
-                    variant="standard"
-                    type="text"
-                    label="Your Message"
-                    multiline
-                    color="primary"
-                  />
-                </ThemeProvider>
-                <Button
-                  variant="contained"
+
+              {/* FORM FOR EMAIL JS */}
+              <form ref={form} onSubmit={sendEmail}>
+                <Stack
+                  spacing={3}
                   sx={{
-                    textTransform: "none",
-                    width: { xs: "30%", sm: "20%", lg: "34%" },
-                    backgroundColor: "#303030",
-                    "&:hover": {
-                      backgroundColor: "#040404",
-                    },
+                    width: { sm: "88%", lg: "100%" },
+                    justifyContent: "center",
+                    padding: { xs: "20px", sm: 0 },
                   }}
                 >
-                  Send
-                </Button>
-              </Stack>
+                  <Stack direction="row" spacing={3}>
+                    <ThemeProvider theme={theme}>
+                      <TextField
+                        variant="standard"
+                        type="name"
+                        label="Your Name"
+                        color="primary"
+                        name="user_name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </ThemeProvider>
+                    <ThemeProvider theme={theme}>
+                      <TextField
+                        variant="standard"
+                        type="email"
+                        label="Your Email"
+                        color="primary"
+                        name="user_email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </ThemeProvider>
+                  </Stack>
+                  <ThemeProvider theme={theme}>
+                    <TextField
+                      variant="standard"
+                      type="text"
+                      label="Your Message"
+                      multiline
+                      color="primary"
+                      name="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </ThemeProvider>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      textTransform: "none",
+                      width: { xs: "30%", sm: "20%", lg: "34%" },
+                      backgroundColor: "#303030",
+                      "&:hover": {
+                        backgroundColor: "#040404",
+                      },
+                    }}
+                    type="submit"
+                  >
+                    Send
+                  </Button>
+                </Stack>
+              </form>
             </Stack>
 
             <Stack spacing={2}>
@@ -210,6 +255,7 @@ function Contact() {
               <Stack direction="row" spacing={2}>
                 <Typography> {formattedDate}</Typography>
                 <Typography> {formattedTime}</Typography>
+                <Typography> {level * 100.0}%</Typography>
               </Stack>
             </Stack>
           </Stack>

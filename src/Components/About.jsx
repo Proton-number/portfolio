@@ -30,7 +30,7 @@ function About() {
         whileInView={{
           opacity: 1,
           y: 0,
-          transition: { delay: 0.8, duration: 1.1 },
+          transition: { delay: 0.2, duration:.8 },
         }}
         sx={{
           display: "flex",
