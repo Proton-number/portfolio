@@ -6,6 +6,7 @@ import {
   Button,
   createTheme,
   ThemeProvider,
+  Snackbar,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
@@ -66,11 +67,12 @@ function Contact() {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          console.log("message sent");
           setName("");
           setEmail("");
           setMessage("");
+          setOpen(true);
+          console.log(result.text);
+          console.log("message sent");
         },
         (error) => {
           console.log(error.text);
@@ -79,6 +81,15 @@ function Contact() {
   };
   const form = useRef();
 
+  //logic for Snackbar
+  const [open, setOpen] = useState(false);
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <ParallaxLayer offset={5} speed={1.2} style={{ backgroundColor: "white" }}>
       <Box
@@ -260,6 +271,13 @@ function Contact() {
             </Stack>
           </Stack>
         </Stack>
+        <Snackbar
+          open={open}
+          autoHideDuration={2800}
+          onClose={handleClose}
+          message="Message sent"
+          sx={{ width: { xs: "50%", sm: "50%", lg: "100%" } }}
+        />
       </Box>
     </ParallaxLayer>
   );

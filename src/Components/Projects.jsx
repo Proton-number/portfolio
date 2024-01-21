@@ -1,8 +1,13 @@
-import { Box } from "@mui/material";
-import React from "react";
+import { Box, Stack, Typography, Paper, Grid } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import { ParallaxLayer } from "@react-spring/parallax";
+import sanityClient from "../Client";
 
 function Projects() {
+  const [projects, setProjects] = useState("");
+
+  useEffect(() => {}, []);
+
   return (
     <ParallaxLayer
       offset={4}
