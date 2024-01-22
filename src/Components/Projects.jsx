@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { ParallaxLayer } from "@react-spring/parallax";
 import sanityClient from "../Client";
 import { motion } from "framer-motion";
+import BlockContent from "@sanity/block-content-to-react";
+import Block from "./Block";
 
 function Projects() {
   const [projects, setProjects] = useState(null);
@@ -20,7 +22,8 @@ function Projects() {
           url
         },
         alt
-      }
+      },
+      body,
     }`
       )
       .then((data) => setProjects(data))
@@ -34,13 +37,11 @@ function Projects() {
       // factor={3}
       style={{ backgroundColor: "white", color: "black" }}
     >
-      <Box>projects..</Box>
-
-      <Grid container>
+      <Grid container spacing={4} columns={{ lg: 10 }}>
         {projects &&
           projects.map((project, index) => (
-            <Grid item key={index}>
-              <Paper>
+            <Grid item key={index} lg={4}>
+              <Paper elevation={8}>
                 <Stack>
                   <Box
                     component={motion.div}
@@ -57,8 +58,6 @@ function Projects() {
                           width: "100%",
                           height: "auto",
                           objectFit: "cover",
-                          borderTopLeftRadius: "15px",
-                          borderTopRightRadius: "15px",
                         }}
                         src={project.mainImage.asset.url}
                         alt={project.mainImage.alt}
@@ -68,6 +67,9 @@ function Projects() {
                   <Typography variant="p">
                     <b> Title:</b> {project.title}
                   </Typography>
+                  {/* BlockContent */}
+
+                  <Block body={project.body} />
                 </Stack>
               </Paper>
             </Grid>
