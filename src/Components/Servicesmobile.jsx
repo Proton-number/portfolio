@@ -14,16 +14,18 @@ function Servicesmobile() {
     <Box id="service-mobile">
       <ParallaxLayer
         offset={3}
-        style={{ backgroundColor: "blue", color: "white" }}
+        speed={1.1}
+        factor={1.4}
+        style={{ backgroundColor: "white" }}
       >
         <Stack
-          // component={motion.div}
-          // initial={{ opacity: 0, y: 55 }}
-          // whileInView={{
-          //   opacity: 1,
-          //   y: 0,
-          //   transition: { delay: 0.2, duration: 1.4 },
-          // }}
+          component={motion.div}
+          initial={{ opacity: 0, y: 55 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.4, duration: 1.1 },
+          }}
           sx={{
             width: { sm: "92%", lg: "84%" },
             margin: "auto",
@@ -32,13 +34,18 @@ function Servicesmobile() {
           }}
           spacing={4}
         >
-          <Typography variant="h1" sx={{ textAlign: "center" }}>
+          <Typography
+            variant="h1"
+            sx={{ fontSize: { xs: "80px" }, textAlign: "center" }}
+          >
             Services
           </Typography>
 
           <Stack spacing={4}>
             <Stack spacing={1}>
-              <Typography variant="h2">My Expertises</Typography>
+              <Typography variant="h2" sx={{ fontSize: { xs: "40px" } }}>
+                My Expertises
+              </Typography>
               <Typography variant="body1">
                 I focus on everything web design and my goal is to deliver a
                 very good digital experience for everyone.
@@ -56,7 +63,9 @@ function Servicesmobile() {
 
           <Stack spacing={4}>
             <Stack spacing={1}>
-              <Typography variant="h2">Tech Stack</Typography>
+              <Typography variant="h2" sx={{ fontSize: { xs: "40px" } }}>
+                Tech Stack
+              </Typography>
               <Typography variant="body1">
                 These are my current tech stack when i want any project to
                 happen. I am open to learn more and i'm still learning more on

@@ -49,8 +49,8 @@ function App() {
             <Box
               component={animated.img}
               whileHover={{ scale: 1.2 }}
-              src={chicken}
-              style={{ width: "15%", marginLeft: "70%" }}
+            src={chicken}
+              sx={{ width: {xs:"40%", sm:"30%",lg:"15%"}, marginLeft: {xs:"66%",sm:"70%" }}}
             />
           </ParallaxLayer>
 
@@ -62,7 +62,7 @@ function App() {
             <Box
               component={motion.img}
               src={programmer}
-              style={{ width: "15%", marginLeft: "10%" }}
+              sx={{ width: {xs:"52%", sm:"34%",lg:"15%"}, marginLeft: {xs:"50%",sm:"10%" }}}
             />
           </ParallaxLayer>
         </Parallax>

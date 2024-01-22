@@ -16,6 +16,7 @@ import NetlifyIcon from "/src/images/netlify.svg";
 import { ParallaxLayer } from "@react-spring/parallax";
 import { useBattery } from "@uidotdev/usehooks";
 import emailjs from "@emailjs/browser";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 function Contact() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -48,16 +49,18 @@ function Contact() {
     // },
     palette: {
       primary: {
-        main: "#B1BDC5", // Change this to your desired primary color
+        main: "#517288", // Change this to your desired primary color
       },
     },
   });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false); //sending animation on the button gotten from material lab button
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSending(true);
     emailjs
       .sendForm(
         "service_thl5klz",
@@ -77,7 +80,10 @@ function Contact() {
         (error) => {
           console.log(error.text);
         }
-      );
+      )
+      .finally(() => {
+        setSending(false);
+      });
   };
   const form = useRef();
 
@@ -200,7 +206,8 @@ function Contact() {
                       onChange={(e) => setMessage(e.target.value)}
                     />
                   </ThemeProvider>
-                  <Button
+                  <LoadingButton
+                    loading={sending}
                     variant="contained"
                     sx={{
                       textTransform: "none",
@@ -213,7 +220,7 @@ function Contact() {
                     type="submit"
                   >
                     Send
-                  </Button>
+                  </LoadingButton>
                 </Stack>
               </form>
             </Stack>
@@ -276,7 +283,7 @@ function Contact() {
           autoHideDuration={2800}
           onClose={handleClose}
           message="Message sent"
-          sx={{ width: { xs: "50%", sm: "50%", lg: "100%" } }}
+          sx={{ width: { xs: "30%", sm: "50%", lg: "100%" } }}
         />
       </Box>
     </ParallaxLayer>

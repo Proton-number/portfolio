@@ -40,19 +40,19 @@ function Name() {
         <ThemeProvider theme={font}>
           <Typography
             variant="h1"
-            sx={{ fontSize: { xs: "50px", sm: "70px", lg: "120px" } }}
+            sx={{ fontSize: { xs: "45px", sm: "70px", lg: "120px" } }}
           >
             HEY, I'M FAVOUR
           </Typography>
           <Typography
             variant="h1"
-            sx={{ fontSize: { xs: "50px", sm: "70px", lg: "120px" } }}
+            sx={{ fontSize: {  xs: "45px", sm: "70px", lg: "120px" } }}
           >
             HEY, I'M FAVOUR
           </Typography>
           <Typography
             variant="h1"
-            sx={{ fontSize: { xs: "50px", sm: "70px", lg: "120px" } }}
+            sx={{ fontSize: {  xs: "45px", sm: "70px", lg: "120px" } }}
           >
             HEY, I'M FAVOUR
           </Typography>

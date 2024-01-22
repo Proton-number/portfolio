@@ -29,13 +29,13 @@ function Talk() {
           display: "flex",
           justifyContent: "center",
           height: "100vh",
-          width: { xs: "80%", lg: "50%" },
+          width: { xs: "80%", sm:"70%", lg: "50%" },
           margin: "auto",
           alignItems: "center",
         }}
       >
-        <Typography variant="h3">
-          Building cool stuff and connect people through it.{" "}
+        <Typography variant="h1" sx={{fontSize:{xs:"45px",sm:'60px'}}}>
+          Building cool stuff and connecting people through it.{" "}
         </Typography>
       </Box>
     </ParallaxLayer>
