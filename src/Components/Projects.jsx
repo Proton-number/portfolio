@@ -34,13 +34,23 @@ function Projects() {
     <ParallaxLayer
       offset={4}
       speed={1.4}
-      // factor={3}
+      factor={1.3}
       style={{ backgroundColor: "white", color: "black" }}
     >
-      <Grid container spacing={4} columns={{ lg: 10 }}>
+      <Grid
+        container
+        spacing={4}
+        columns={{ sm: 8, lg: 10 }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          padding: { xs: "40px" },
+          marginTop: { xs: "40px", lg: 0 },
+        }}
+      >
         {projects &&
           projects.map((project, index) => (
-            <Grid item key={index} lg={4}>
+            <Grid item key={index} sm={4} lg={3.3}>
               <Paper elevation={8}>
                 <Stack>
                   <Box
@@ -64,12 +74,14 @@ function Projects() {
                       />
                     )}
                   </Box>
-                  <Typography variant="p">
-                    <b> Title:</b> {project.title}
-                  </Typography>
-                  {/* BlockContent */}
+                  <Stack sx={{ padding: { sm: "10px", lg: "20px" } }}>
+                    <Typography variant="p">
+                      <b> Title:</b> {project.title}
+                    </Typography>
+                    {/* BlockContent */}
 
-                  <Block body={project.body} />
+                    <Block body={project.body} />
+                  </Stack>
                 </Stack>
               </Paper>
             </Grid>
