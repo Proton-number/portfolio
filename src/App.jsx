@@ -19,12 +19,12 @@ function App() {
   return (
     <>
       <>
-        {/* <LoadingComponent /> */}
+        <LoadingComponent />
 
         <Box
-        // component={motion.div}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1, y: 0, transition: { delay: 4 } }}
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 4 } }}
         >
           <Parallax
             pages={6}

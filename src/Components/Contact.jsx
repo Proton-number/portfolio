@@ -44,9 +44,9 @@ function Contact() {
   const formattedTime = currentDateTime.toLocaleString("en-US", timeOptions);
 
   const theme = createTheme({
-    // typography: {
-    //   fontFamily: 'Lato, sans-serif',
-    // },
+    typography: {
+      fontFamily: 'Raleway, sans-serif',
+    },
     palette: {
       primary: {
         main: "#517288", // Change this to your desired primary color
@@ -100,7 +100,8 @@ function Contact() {
     setOpen(false);
   };
   return (
-    <ParallaxLayer offset={5} speed={1.2} style={{ backgroundColor: "white" }}>
+    <ThemeProvider theme={theme}>
+      <ParallaxLayer offset={5} speed={1.2} style={{ backgroundColor: "white" }}>
       <Box
         component={motion.div}
         initial={{ opacity: 0, y: 30 }}
@@ -290,6 +291,7 @@ function Contact() {
         />
       </Box>
     </ParallaxLayer>
+    </ThemeProvider>
   );
 }
 

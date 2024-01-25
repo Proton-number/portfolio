@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { ParallaxLayer } from "@react-spring/parallax";
 import sanityClient from "../Client";
 import { motion } from "framer-motion";
-import BlockContent from "@sanity/block-content-to-react";
 import Block from "./Block";
 
 function Projects() {
@@ -34,7 +33,7 @@ function Projects() {
     <ParallaxLayer
       offset={4}
       speed={1.4}
-      factor={1.3}
+      factor={1.2}
       style={{ backgroundColor: "white", color: "black" }}
     >
       <Grid

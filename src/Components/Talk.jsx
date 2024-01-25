@@ -10,6 +10,11 @@ import { motion } from "framer-motion";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 function Talk() {
+  const font = createTheme({
+    typography: {
+      fontFamily: "Raleway, sans-serif",
+    },
+  });
   return (
     <ParallaxLayer
       offset={1}
@@ -29,14 +34,19 @@ function Talk() {
           display: "flex",
           justifyContent: "center",
           height: "100vh",
-          width: { xs: "80%", sm:"70%", lg: "50%" },
+          width: { xs: "80%", sm: "70%", lg: "50%" },
           margin: "auto",
           alignItems: "center",
         }}
       >
-        <Typography variant="h1" sx={{fontSize:{xs:"45px",sm:'60px'}}}>
-          Building cool stuff and connecting people through it.{" "}
-        </Typography>
+        <ThemeProvider theme={font}>
+          <Typography
+            variant="h1"
+            sx={{ fontSize: { xs: "45px", sm: "60px" } }}
+          >
+            Building technolgies and connecting people through it.{" "}
+          </Typography>
+        </ThemeProvider>
       </Box>
     </ParallaxLayer>
   );

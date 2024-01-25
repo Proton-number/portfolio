@@ -10,8 +10,14 @@ import { motion } from "framer-motion";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 function Services() {
+  const font = createTheme({
+    typography: {
+      fontFamily: "Raleway, sans-serif",
+    },
+  });
   return (
-    <Box id="service-desktop">
+    <ThemeProvider theme={font}>
+      <Box id="service-desktop">
       <ParallaxLayer
         offset={3}
         speed={1.1}
@@ -81,6 +87,7 @@ function Services() {
         </Stack>
       </ParallaxLayer>
     </Box>
+    </ThemeProvider>
   );
 }
 
