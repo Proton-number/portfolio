@@ -15,11 +15,9 @@ import Servicesmobile from "./Components/Servicesmobile";
 import chicken from "/src/images/cute chicken-rafiki.png";
 import programmer from "/src/images/Programmer-pana.png";
 
-
 function App() {
   return (
     <>
-
       <>
         {/* <LoadingComponent /> */}
 

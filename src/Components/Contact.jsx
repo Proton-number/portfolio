@@ -3,10 +3,10 @@ import {
   Stack,
   Typography,
   TextField,
-  Button,
   createTheme,
   ThemeProvider,
   Snackbar,
+  Modal,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
@@ -60,6 +60,9 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (!name || !email || !message) {
+      return;
+    }
     setSending(true);
     emailjs
       .sendForm(

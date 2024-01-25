@@ -40,17 +40,17 @@ function Projects() {
       <Grid
         container
         spacing={4}
-        columns={{ sm: 8, lg: 10 }}
+        columns={{ xs: 6, sm: 8, lg: 10 }}
         sx={{
           display: "flex",
           justifyContent: "center",
-          padding: { xs: "40px" },
+          padding: { xs: "10px" },
           marginTop: { xs: "40px", lg: 0 },
         }}
       >
         {projects &&
           projects.map((project, index) => (
-            <Grid item key={index} sm={4} lg={3.3}>
+            <Grid item key={index} xs={3} sm={4} lg={3.3}>
               <Paper elevation={8}>
                 <Stack>
                   <Box
@@ -74,9 +74,11 @@ function Projects() {
                       />
                     )}
                   </Box>
-                  <Stack sx={{ padding: { sm: "10px", lg: "20px" } }}>
+                  <Stack
+                    sx={{ padding: { xs: "12px", sm: "10px", lg: "20px" } }}
+                  >
                     <Typography variant="p">
-                      <b> Title:</b> {project.title}
+                      <b>{project.title}</b>
                     </Typography>
                     {/* BlockContent */}
 

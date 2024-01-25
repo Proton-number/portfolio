@@ -15,7 +15,7 @@ function About() {
     <ParallaxLayer
       offset={2}
       speed={0.8}
-      factor={1.35}
+      factor={1.43}
       style={{ backgroundColor: "white" }}
     >
       <Stack
@@ -30,7 +30,7 @@ function About() {
           justifyContent: "center",
           height: "100vh",
           alignItems: "center",
-          marginTop: { xs: "120px", sm:0, lg:'60px' },
+          marginTop: { xs: "120px", sm: 0, lg: "60px" },
         }}
         spacing={{ xs: 4 }}
       >
@@ -61,7 +61,7 @@ function About() {
               variant="h2"
               sx={{
                 textAlign: "center",
-                fontSize: { xs: "50px", sm: "42px", lg:'68px' },
+                fontSize: { xs: "40px", sm: "42px", lg: "68px" },
                 fontWeight: { xs: 350 },
                 marginBottom: { xs: "10px", lg: "30px" },
               }}
@@ -70,7 +70,10 @@ function About() {
             </Typography>
             <Stack
               spacing={{ xs: 2, sm: 4, lg: 3 }}
-              sx={{ width: { xs: "80%", sm: "90%",lg:"70%" }, margin: "auto" }}
+              sx={{
+                width: { xs: "80%", sm: "90%", lg: "70%" },
+                margin: "auto",
+              }}
             >
               <Typography sx={{ textAlign: "justify" }}>
                 I am a front end developer based in Lagos, Nigeria. When i am
